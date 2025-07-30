@@ -8,7 +8,7 @@
     </header>
     
     <!-- Main content -->
-    <main class="flex-1 flex flex-col items-center py-4">
+    <main class="flex-1 flex flex-col items-center py-4 lg:max-w-3xl lg:mx-auto">
       <!-- School Card -->
       <div class="w-full max-w-md px-4 mb-6">
         <SchoolCard 
