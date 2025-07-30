@@ -1,7 +1,10 @@
 <template>
   <div class="bg-white rounded-2xl p-6 shadow-sm relative">
     <!-- Close button -->
-    <button class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+    <button 
+      @click="$emit('close')"
+      class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors"
+    >
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
@@ -70,12 +73,18 @@
 interface ProfileFormProps {
   onConfirm?: (data: { class: string; bacType: string }) => void
   onClose?: () => void
+  initialClass?: string
+  initialBacType?: string
 }
 
 const props = defineProps<ProfileFormProps>()
+const emit = defineEmits<{
+  confirm: [data: { class: string; bacType: string }]
+  close: []
+}>()
 
-const selectedClass = ref<string>('')
-const selectedBacType = ref<string>('')
+const selectedClass = ref<string>(props.initialClass || '')
+const selectedBacType = ref<string>(props.initialBacType || '')
 
 const classOptions = ref<string[]>([])
 const bacTypeOptions = ref<string[]>([])
@@ -95,7 +104,7 @@ onMounted(() => {
 
 const handleConfirm = () => {
   if (selectedClass.value && selectedBacType.value) {
-    props.onConfirm?.({
+    emit('confirm', {
       class: selectedClass.value,
       bacType: selectedBacType.value
     })
