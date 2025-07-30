@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,6 +35,28 @@ body {
 /* Custom utility classes */
 .text-balance {
   text-wrap: balance;
+}
+
+/* Title typography class */
+.title-dm-sans {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
+
+/* School title typography class */
+.school-title-dm-sans {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: -2%;
+  vertical-align: middle;
 }
 
 /* Responsive container */

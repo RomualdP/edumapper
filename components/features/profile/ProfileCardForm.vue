@@ -3,14 +3,14 @@
     <!-- Card State -->
     <div v-if="!isExpanded" class="flex items-start justify-between">
       <div class="flex-1">
-        <h3 class="text-lg font-bold text-gray-900 mb-1">En quelle classe es-tu ?</h3>
+        <h3 class="title-dm-sans text-gray-900 mb-1">En quelle classe es-tu ?</h3>
         <p class="text-sm text-gray-500">{{ displayText }}</p>
       </div>
       <button 
         @click="expandForm"
         class="ml-3 p-1 text-gray-600 hover:text-gray-800 transition-colors"
       >
-        <img src="/assets/icons/edit.svg" alt="Edit" class="w-5 h-5" />
+        <img src="/assets/icons/edit.svg" alt="Edit" class="w-4 h-4" />
       </button>
     </div>
 
@@ -28,7 +28,7 @@
 
       <!-- Class selection section -->
       <div class="mb-6 mt-2">
-        <h3 class="text-lg font-bold text-gray-900 mb-4">En quelle classe es-tu ?</h3>
+        <h3 class="title-dm-sans text-gray-900 mb-4">En quelle classe es-tu ?</h3>
         <div class="flex flex-wrap gap-3">
           <button 
             v-for="option in classOptions" 
@@ -51,7 +51,7 @@
 
       <!-- Bac type selection section -->
       <div class="mb-6">
-        <h3 class="text-lg font-bold text-gray-900 mb-4">Type de bac</h3>
+        <h3 class="title-dm-sans text-gray-900 mb-4">Type de bac</h3>
         <div class="flex flex-wrap gap-3">
           <button 
             v-for="option in bacTypeOptions" 

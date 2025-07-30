@@ -12,7 +12,7 @@
 
     <!-- School selection section -->
     <div class="mb-6">
-      <h3 class="text-lg font-bold text-gray-900 mb-4">Sélectionner un lycée</h3>
+      <h3 class="title-dm-sans text-gray-900 mb-4">Sélectionner un lycée</h3>
       <div class="max-h-60 overflow-y-auto">
         <button 
           v-for="school in schools" 

@@ -2,7 +2,7 @@
   <div class="rounded-2xl p-6 shadow-lg bg-gradient-to-br from-orange-400 via-pink-400 to-purple-500">
     <div class="flex flex-col gap-3">
       <!-- School name -->
-      <h2 class="text-xl font-bold text-white">{{ schoolName }}</h2>
+      <h2 class="school-title-dm-sans text-white">{{ schoolName }}</h2>
       
       <!-- School details with icons -->
       <div class="flex items-center gap-2 text-sm text-white/90">
