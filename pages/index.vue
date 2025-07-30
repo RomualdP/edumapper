@@ -29,11 +29,12 @@
         </div>
       </div>
       
-      <!-- Profile Form -->
+      <!-- Profile Card Form -->
       <div class="w-full max-w-md px-4 mb-6">
-        <ProfileForm 
+        <ProfileCardForm 
+          :initial-class="profileData?.class"
+          :initial-bac-type="profileData?.bacType"
           @confirm="handleProfileConfirm"
-          @close="handleProfileClose"
         />
       </div>
       
@@ -57,11 +58,12 @@
 <script setup lang="ts">
 import SchoolCard from '~/components/features/school/SchoolCard.vue'
 import SchoolSelector from '~/components/features/school/SchoolSelector.vue'
-import ProfileForm from '~/components/features/profile/ProfileForm.vue'
+import ProfileCardForm from '~/components/features/profile/ProfileCardForm.vue'
 import ProfileSection from '~/components/features/profile/ProfileSection.vue'
 
 const selectedSchool = ref<string>('Lycée Gaston Berger')
 const showSchoolSelector = ref<boolean>(false)
+const profileData = ref<{ class: string; bacType: string } | null>(null)
 
 const handleSchoolConfirm = (school: string) => {
   selectedSchool.value = school
@@ -70,12 +72,7 @@ const handleSchoolConfirm = (school: string) => {
 
 const handleProfileConfirm = (data: { class: string; bacType: string }) => {
   console.log('Profile confirmed:', data)
-  // TODO: Handle profile confirmation
-}
-
-const handleProfileClose = () => {
-  console.log('Profile form closed')
-  // TODO: Handle form close
+  profileData.value = data
 }
 
 const handleSpecialtiesEdit = () => {
@@ -87,4 +84,6 @@ const handleNotesEdit = () => {
   console.log('Edit notes')
   // TODO: Handle notes edit
 }
-</script> 
+</script>
+
+ 
