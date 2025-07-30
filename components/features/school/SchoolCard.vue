@@ -23,7 +23,10 @@
       
       <!-- Action button -->
       <div class="mt-2">
-        <button class="px-4 py-2 rounded-full bg-white/90 text-sm font-semibold text-gray-800 hover:bg-white transition-colors shadow-sm">
+        <button 
+          @click="$emit('edit')"
+          class="px-4 py-2 rounded-full bg-white/90 text-sm font-semibold text-gray-800 hover:bg-white transition-colors shadow-sm"
+        >
           Modifier
         </button>
       </div>
@@ -39,4 +42,7 @@ interface SchoolCardProps {
 }
 
 defineProps<SchoolCardProps>()
+defineEmits<{
+  edit: []
+}>()
 </script>

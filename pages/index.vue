@@ -12,10 +12,21 @@
       <!-- School Card -->
       <div class="w-full max-w-md px-4 mb-6">
         <SchoolCard 
-          schoolName="Lycée Gaston Berger" 
-          city="Lille" 
+          :schoolName="selectedSchool"
+          city="Paris"
           schoolType="Lycée Public"
+          @edit="showSchoolSelector = true"
         />
+      </div>
+      
+      <!-- School Selector Modal -->
+      <div v-if="showSchoolSelector" class="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+        <div class="w-full max-w-md mx-4">
+          <SchoolSelector 
+            @confirm="handleSchoolConfirm"
+            @close="showSchoolSelector = false"
+          />
+        </div>
       </div>
       
       <!-- Profile Form -->
@@ -45,8 +56,17 @@
 
 <script setup lang="ts">
 import SchoolCard from '~/components/features/school/SchoolCard.vue'
+import SchoolSelector from '~/components/features/school/SchoolSelector.vue'
 import ProfileForm from '~/components/features/profile/ProfileForm.vue'
 import ProfileSection from '~/components/features/profile/ProfileSection.vue'
+
+const selectedSchool = ref<string>('Lycée Gaston Berger')
+const showSchoolSelector = ref<boolean>(false)
+
+const handleSchoolConfirm = (school: string) => {
+  selectedSchool.value = school
+  showSchoolSelector.value = false
+}
 
 const handleProfileConfirm = (data: { class: string; bacType: string }) => {
   console.log('Profile confirmed:', data)

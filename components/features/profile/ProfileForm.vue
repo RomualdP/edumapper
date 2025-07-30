@@ -77,8 +77,21 @@ const props = defineProps<ProfileFormProps>()
 const selectedClass = ref<string>('')
 const selectedBacType = ref<string>('')
 
-const classOptions = ['Seconde', 'Première', 'Terminale']
-const bacTypeOptions = ['Général', 'Technologique', 'Professionnel']
+const classOptions = ref<string[]>([])
+const bacTypeOptions = ref<string[]>([])
+
+// Fetch data from APIs
+const { data: classesData } = await useFetch<{ classes: string[] }>('/api/classes')
+const { data: bacTypesData } = await useFetch<{ bacTypes: string[] }>('/api/bac-types')
+
+onMounted(() => {
+  if (classesData.value) {
+    classOptions.value = classesData.value.classes
+  }
+  if (bacTypesData.value) {
+    bacTypeOptions.value = bacTypesData.value.bacTypes
+  }
+})
 
 const handleConfirm = () => {
   if (selectedClass.value && selectedBacType.value) {
