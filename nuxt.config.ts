@@ -14,10 +14,10 @@ export default defineNuxtConfig({
   // CSS configuration
   css: ['~/assets/css/main.css'],
 
-  // PostCSS configuration for Tailwind CSS v4.1
+  // PostCSS configuration for Tailwind CSS v3
   postcss: {
     plugins: {
-      '@tailwindcss/postcss': {},
+      tailwindcss: {},
       autoprefixer: {}
     }
   },
