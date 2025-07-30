@@ -3,7 +3,7 @@
     <!-- Header section with logo -->
     <header class="p-4 border-b-2 border-gray-200 ">
         <div class="flex items-center ">
-          <img src="/assets/Logo.svg" alt="Edumapper Logo" class="h-8" />
+          <img src="~/assets/Logo.svg" alt="Edumapper Logo" class="h-8" />
         </div>
     </header>
     
