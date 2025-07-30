@@ -1,0 +1,88 @@
+---
+description: Apply NuxtJS 3 best practices for modern Vue development, focusing on Composition API, server-side rendering, file-based routing, and performance optimization when building Nuxt applications.
+alwaysApply: false
+---
+Project Structure:
+- Place pages in `pages/` directory
+- Store composables in `composables/` directory
+- Use `server/` for server-side logic
+- Organize components in `components/` directory
+- Keep layouts in `layouts/` directory
+
+Script Setup and Composition API:
+- Use `<script setup lang="ts">`
+- Prefer Composition API over Options API
+- Use `ref()` for reactive primitives
+- Use `reactive()` for reactive objects
+- Destructure props with `defineProps()`
+- Emit events with `defineEmits()`
+
+Routing and Navigation:
+- Use file-based routing in `pages/`
+- Navigate with `navigateTo()` composable
+- Avoid direct router manipulation
+- Use `definePageMeta()` for page configuration
+- Implement dynamic routes with brackets
+
+Data Fetching:
+- Use `$fetch` for client-side requests
+- Use `useFetch()` for SSR-compatible data
+- Use `useLazyFetch()` for non-blocking requests
+- Implement `refresh()` for data revalidation
+- Handle loading states with `pending`
+
+Server-Side Rendering:
+- Enable SSR by default
+- Use `process.client` for client-only code
+- Use `process.server` for server-only code
+- Implement proper hydration handling
+- Avoid DOM manipulation on server
+
+Performance:
+- Use `useLazyAsyncData()` for non-critical data
+- Implement proper image optimization
+- Use dynamic imports for large components
+- Enable compression in production
+- Minimize bundle size with tree-shaking
+
+SEO and Meta:
+- Use `useSeoMeta()` for meta tags
+- Implement structured data with `useJsonld()`
+- Set page titles with `useHead()`
+- Configure Open Graph meta tags
+- Use semantic HTML elements
+
+State Management:
+- Use `useState()` for global state
+- Prefer Pinia for complex state
+- Avoid Vuex in Nuxt 3
+- Use `useCookie()` for persistent state
+- Implement reactive state patterns
+
+Error Handling:
+- Use `createError()` for custom errors
+- Implement global error handling
+- Use `clearError()` for error recovery
+- Handle 404 with custom error pages
+- Log errors appropriately
+
+Testing:
+- Test components with Vue Test Utils
+- Mock `$fetch` and `useFetch` calls
+- Test server-side logic separately
+- Use Playwright for E2E testing
+- Test SSR rendering behavior
+
+Middleware and Plugins:
+- Use route middleware for protection
+- Create global middleware sparingly
+- Register plugins in `plugins/` directory
+- Use `.client` suffix for client plugins
+- Use `.server` suffix for server plugins
+
+TypeScript:
+- Enable strict TypeScript mode
+- Type composable return values
+- Use interface for prop definitions
+- Type server API responses
+- Avoid `any` type usage
