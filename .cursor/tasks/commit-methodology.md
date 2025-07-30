@@ -10,23 +10,43 @@
 
 ### Commit message format:
 ```bash
-# Format: type: description
+# Format: <type>[optional scope]: <description>
 # Examples:
 feat: add UserProfile component
+feat(auth): add login functionality
 fix: resolve TypeScript error in Navigation
+fix(ui): correct button alignment
 refactor: improve Button component styling
 docs: update README with new features
 ```
 
 ### Commit message structure:
 ```bash
-type: brief description
+<type>[optional scope]: <description>
 
-- Detailed bullet point 1
-- Detailed bullet point 2
-- Detailed bullet point 3
-- Ensure no ESLint or TypeScript errors
+[optional body]
+
+[optional footer(s)]
 ```
+
+### Conventional Commits Types:
+- **feat**: A new feature for the user
+- **fix**: A bug fix for the user
+- **docs**: Documentation only changes
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **perf**: A code change that improves performance
+- **test**: Adding missing tests or correcting existing tests
+- **build**: Changes that affect the build system or external dependencies
+- **ci**: Changes to CI configuration files and scripts
+- **chore**: Other changes that don't modify src or test files
+- **revert**: Reverts a previous commit
+
+### Scope Examples:
+- **feat(auth)**: Authentication related features
+- **fix(ui)**: User interface fixes
+- **refactor(api)**: API related refactoring
+- **docs(readme)**: README documentation updates
 
 ## Task Completion Criteria
 
@@ -79,7 +99,7 @@ feat: initialize Nuxt 3 project setup
 
 ### Phase 10+ - Component Development (Simple)
 ```bash
-feat: add [ComponentName] component
+feat(ui): add [ComponentName] component
 
 - Create [ComponentName].vue with TypeScript types
 - Implement responsive design with Tailwind CSS
@@ -89,7 +109,7 @@ feat: add [ComponentName] component
 
 ### Phase 10+ - Component Development (Complex)
 ```bash
-feat: add [ComponentName] component with full functionality
+feat(ui): add [ComponentName] component with full functionality
 
 - Create [ComponentName].vue with TypeScript types
 - Implement responsive design with Tailwind CSS
@@ -100,13 +120,53 @@ feat: add [ComponentName] component with full functionality
 
 ### Bug Fixes
 ```bash
-fix: resolve [IssueDescription]
+fix(ui): resolve [IssueDescription]
 
 - Fix [specific issue]
 - Update [affected files]
 - Ensure all tests pass (if applicable)
 - Verify no linting errors
 - Test component functionality
+```
+
+### Performance Improvements
+```bash
+perf(ui): optimize [ComponentName] rendering
+
+- Implement virtual scrolling for large lists
+- Add lazy loading for images
+- Optimize component re-renders
+- Reduce bundle size impact
+```
+
+### Code Refactoring
+```bash
+refactor(ui): improve [ComponentName] architecture
+
+- Extract reusable composables
+- Simplify component logic
+- Improve type safety
+- Enhance code maintainability
+```
+
+### Testing
+```bash
+test(ui): add unit tests for [ComponentName]
+
+- Add comprehensive test coverage
+- Mock external dependencies
+- Test user interactions
+- Verify component behavior
+```
+
+### Documentation
+```bash
+docs: update component documentation
+
+- Add JSDoc comments
+- Update README with new features
+- Document component props and events
+- Include usage examples
 ```
 
 ## Error Handling Process
