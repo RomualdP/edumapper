@@ -18,28 +18,26 @@
         />
       </div>
       
-      <!-- Placeholder for form sections -->
-      <div class="w-full max-w-md px-4 space-y-4">
-        <!-- Form section placeholder -->
-        <div class="bg-white rounded-2xl p-6 shadow-sm">
-          <div class="text-center text-gray-400 text-sm">
-            Form sections will be added here
-          </div>
-        </div>
-        
-        <!-- Editable sections placeholder -->
-        <div class="space-y-3">
-          <div class="bg-white rounded-2xl p-4 shadow-sm">
-            <div class="text-center text-gray-400 text-sm">
-              Spécialités section
-            </div>
-          </div>
-          <div class="bg-white rounded-2xl p-4 shadow-sm">
-            <div class="text-center text-gray-400 text-sm">
-              Notes section
-            </div>
-          </div>
-        </div>
+      <!-- Profile Form -->
+      <div class="w-full max-w-md px-4 mb-6">
+        <ProfileForm 
+          @confirm="handleProfileConfirm"
+          @close="handleProfileClose"
+        />
+      </div>
+      
+      <!-- Profile Sections -->
+      <div class="w-full max-w-md px-4 space-y-3">
+        <ProfileSection 
+          title="Spécialités"
+          placeholder="À compléter"
+          @edit="handleSpecialtiesEdit"
+        />
+        <ProfileSection 
+          title="Notes"
+          placeholder="À compléter"
+          @edit="handleNotesEdit"
+        />
       </div>
     </main>
   </div>
@@ -47,4 +45,26 @@
 
 <script setup lang="ts">
 import SchoolCard from '~/components/features/school/SchoolCard.vue'
+import ProfileForm from '~/components/features/profile/ProfileForm.vue'
+import ProfileSection from '~/components/features/profile/ProfileSection.vue'
+
+const handleProfileConfirm = (data: { class: string; bacType: string }) => {
+  console.log('Profile confirmed:', data)
+  // TODO: Handle profile confirmation
+}
+
+const handleProfileClose = () => {
+  console.log('Profile form closed')
+  // TODO: Handle form close
+}
+
+const handleSpecialtiesEdit = () => {
+  console.log('Edit specialties')
+  // TODO: Handle specialties edit
+}
+
+const handleNotesEdit = () => {
+  console.log('Edit notes')
+  // TODO: Handle notes edit
+}
 </script> 
